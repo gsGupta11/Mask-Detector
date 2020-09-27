@@ -14,7 +14,7 @@ def mask(test_image):
     test_image = np.expand_dims(test_image,axis=0)
     result = list(loaded_model.predict(test_image)[0])
     print(result)
-    if result[0] > result[1]:
-        return "Masked"
+    if result[1] > result[0]:
+        return "Not Masked"
     else:
-        return "No Mask"
+        return "Masked"
